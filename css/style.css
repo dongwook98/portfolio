@@ -351,12 +351,13 @@ button:focus {
 
 .project {
   position: relative;
-  border-radius: 8px;
-  overflow: hidden;
+  /* border-radius: 8px; */
+  /* overflow: hidden; */
 }
 
 .project__img {
   width: 100%;
+  border-radius: 8px;
 }
 
 .project__metadata {
@@ -381,7 +382,7 @@ button:focus {
   transform: translateY(0px);
 }
 
-.project__title:after {
+.project__title::after {
   content: '';
   display: block;
   position: relative;
@@ -391,4 +392,40 @@ button:focus {
   width: 50px;
   height: 2px;
   background-color: var(--color-accent);
+}
+
+/* Testimonial */
+.opinions {
+  margin: 3rem;
+}
+
+.opinion {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+/* .testimonial의 짝수번째 요소의 이미지를 오른쪽으로 배치 */
+.opinion:nth-child(even) .opinion__img {
+  order: 1;
+}
+
+.opinion__img {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.opinion__bubble {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.opinion__bubble__name {
+  color: var(--color-accent);
+  font-weight: bold;
+  filter: brightness(70%);
 }
