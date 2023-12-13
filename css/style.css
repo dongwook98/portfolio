@@ -52,7 +52,7 @@ button {
 }
 
 button:focus {
-  outline: 1px solid var(--color-accent);
+  outline: 1px solid transparent;
 }
 
 /* Common */
@@ -110,13 +110,19 @@ button:focus {
   font-size: 1.8rem;
 }
 
+.header__toggle {
+  display: none;
+}
+
 .header__menu {
   display: flex;
   gap: 4px;
 }
 
 .header__menu__item {
+  display: block;
   padding: 8px 16px;
+  border-bottom: 1px solid transparent; /* hover시 메뉴 안밀리게 투명색으로 설정 */
 }
 
 .header__menu__item:hover {
@@ -483,11 +489,13 @@ button:focus {
 /* 반응형 스타일링 */
 @media screen and (max-width: 768px) {
   .section {
-    padding: 3rem 2rem;
+    padding: 4rem 2rem;
   }
+
   .title {
     font-size: 2rem;
   }
+
   .description {
     font-size: 1rem;
   }
@@ -495,13 +503,31 @@ button:focus {
   .header {
     flex-direction: column;
     align-items: flex-start;
+    background-color: var(--color-primary);
   }
+
+  .header__toggle {
+    display: block;
+    color: var(--color-white);
+    font-size: 1.5rem;
+    position: absolute;
+    top: 1.3rem;
+    right: 1rem;
+    cursor: pointer;
+  }
+
   .header__menu {
+    display: none;
     flex-direction: column;
-    align-items: center;
-    padding: 1rem 4rem;
+    text-align: center;
+    margin: 1rem 4rem;
     gap: 1rem;
   }
+
+  .header__menu.open {
+    display: flex;
+  }
+
   .header__nav {
     width: 100%;
   }
@@ -509,14 +535,17 @@ button:focus {
   #home {
     padding-bottom: 3rem;
   }
+
   .home__title {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
   }
+
   .majors {
     flex-direction: column;
     align-items: center;
   }
+
   .major {
     max-width: 25rem;
   }
@@ -524,21 +553,27 @@ button:focus {
   .education {
     justify-content: center;
   }
+
   .skills {
     grid-template-columns: 1fr;
   }
+
   .categories {
     flex-direction: column;
   }
+
   .category {
     width: 100%;
   }
+
   .projects {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .opinion {
     flex-direction: column;
   }
+
   .opinion:nth-child(even) .opinion__img {
     order: 0;
   }
