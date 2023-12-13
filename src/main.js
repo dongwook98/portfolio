@@ -14,6 +14,15 @@ document.addEventListener('scroll', () => {
 const $home = document.querySelector('.home__container');
 const $homeHeight = $home.offsetHeight;
 document.addEventListener('scroll', () => {
-  console.log(1 - window.scrollY / $homeHeight);
   $home.style.opacity = 1 - window.scrollY / $homeHeight;
+});
+
+// Home 섹션 절반정도 내려가면 애로우 버튼 사라지게 처리
+const $arrowUp = document.querySelector('.arrow-up');
+document.addEventListener('scroll', () => {
+  if (window.scrollY > $homeHeight / 2) {
+    $arrowUp.classList.add('arrow-up--visible');
+  } else {
+    $arrowUp.classList.remove('arrow-up--visible');
+  }
 });
