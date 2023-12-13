@@ -9,7 +9,6 @@ document.addEventListener('scroll', () => {
   } else {
     $header.classList.remove('header--dark');
   }
-  console.log(window.scrollY);
 });
 
 // Home 섹션을 아래로 스크롤시 투명하게 처리함
