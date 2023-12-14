@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- SEO -->
-  <title>동욱의 포트폴리오</title>
+  <title>동욱&#39;s 포트폴리오</title>
   <meta name="description" content="프론트엔드 개발자 동욱의 포트폴리오 웹 사이트" />
   <meta name="author" content="동욱" />
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
@@ -21,12 +21,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/1fcca1d084.js" crossorigin="anonymous"></script>
+  <!-- TypeIt -->
+  <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
   <!-- JavaScript -->
   <script type="module" src="src/main.js" defer></script>
   <script type="module" src="src/projects.js" defer></script>
   <script type="module" src="src/active_menu.js" defer></script>
+  <script type="module" src="src/type.js" defer></script>
 </head>
 
 <body>
@@ -68,11 +71,16 @@
   <main>
     <!-- Home -->
     <section id="home">
-      <div class="home__container">
+      <div class="max-container home__container">
         <img class="home__avatar" src="images/profile.png" alt="동욱의 프로필 이미지">
-        <h2 class="home__title">안녕하세요. <br /><strong class="home__title--strong">프론트엔드</strong> 개발자 강동욱입니다.</h2>
-        <p class="home__description">계단을 오르는것과 같이 차근차근히 성장해나가고 있는 개발자 강동욱입니다.</p>
-        <a class="home__contact" href="#contact">Cotact Me</a>
+        <div>
+          <h2 class="home__title" aria-label="안녕하세요. 저는 프론트엔드 개발자 강동욱입니다.">안녕하세요. <br />
+            <strong class="home__title--strong">사용자 경험을 최우선으로 고려하는</strong> <br />
+            프론트엔드 개발자 강동욱입니다.
+          </h2>
+          <p class="home__description">계단을 오르는것과 같이 차근차근히 성장해나가고 있는 개발자 강동욱입니다.</p>
+          <a class="home__contact" href="#contact">Contact Me</a>
+        </div>
       </div>
     </section>
     <!-- About -->
